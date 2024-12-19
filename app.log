@@ -1,0 +1,30 @@
+{
+  message: 'MongoDB connected Succesfully',
+  level: 'info',
+  timestamp: '2024-11-28T17:46:54.703Z'
+}
+{
+  message: 'App has started on port 5000',
+  level: 'info',
+  timestamp: '2024-11-28T17:47:57.979Z'
+}
+{
+  message: 'MongoDB connected Succesfully',
+  level: 'info',
+  timestamp: '2024-11-28T17:47:58.030Z'
+}
+{
+  message: 'Something went wrong while connecting to MongoDb',
+  level: 'error',
+  timestamp: '2024-12-17T14:53:49.045Z'
+}
+{
+  message: 'Something went wrong while connecting to MongoDb',
+  level: 'error',
+  timestamp: '2024-12-17T14:55:55.821Z'
+}
+{
+  message: 'Something went wrong while connecting to MongoDb',
+  level: 'error',
+  timestamp: '2024-12-17T14:58:09.998Z'
+}
