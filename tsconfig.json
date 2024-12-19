@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "target": "es6",
     "skipLibCheck": true,
@@ -9,11 +9,12 @@
   "outDir": "./dist",
   "sourceMap": true,
   "noImplicitAny": true,
+  "esModuleInterop": true,
   "rootDir": "./src",
   "allowSyntheticDefaultImports": true
   // "allowImportingTsExtensions": true
   },
-  "include": ["src/**/*","**/*.test.ts", "src/test/integration"],
+  "include": ["src/**/*","**/*.test.ts",],
   "exclude": ["node_modules", "dist"]
   }
   
