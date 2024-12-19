@@ -2,12 +2,15 @@ import "express-async-errors";
 import express, { Application } from "express";
 
 import morgan from "morgan";
+import cors from "cors";
 import logger from "./utils/logger";
 import { error, notFound } from "./middlewares/error";
 import authRoutes from "./routes/auth";
 
 const app: Application = express();
 const morganFormat = ":method :url :status :response-time ms";
+app.use(express.json()); // Parses JSON requests
+app.use(cors());
 app.use(
   morgan(morganFormat, {
     stream: {
@@ -24,9 +27,8 @@ app.use(
   })
 );
 
-app.use(express.json()); // Parses JSON requests
 // Placeholder route
-app.use("/api/auth",authRoutes)
+app.use("/api/auth", authRoutes);
 app.use(notFound);
 app.use(error);
 
