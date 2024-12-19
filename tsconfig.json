@@ -6,7 +6,7 @@
     "skipLibCheck": true,
   "baseUrl": "src",
   "strict": true,
-  "outDir": "./dist",
+  "outDir": "./src/dist",
   "sourceMap": true,
   "noImplicitAny": true,
   "esModuleInterop": true,
