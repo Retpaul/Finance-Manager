@@ -4,17 +4,15 @@
     "moduleResolution": "node",
     "target": "es6",
     "skipLibCheck": true,
-  "baseUrl": "src",
-  "strict": true,
-  "outDir": "./src/dist",
-  "sourceMap": true,
-  "noImplicitAny": true,
-  "esModuleInterop": true,
-  "rootDir": "./src",
-  "allowSyntheticDefaultImports": true
-  // "allowImportingTsExtensions": true
+    "strict": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "rootDir": "./src",
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*","**/*.test.ts",],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist","**/*.test.ts"]
   }
   
