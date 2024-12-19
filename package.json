@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": " Personal Finance  Manger",
   "main": "server.ts",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "test": "vitest",
