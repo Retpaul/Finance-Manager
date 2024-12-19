@@ -10,7 +10,7 @@ import authRoutes from "./routes/auth";
 const app: Application = express();
 const morganFormat = ":method :url :status :response-time ms";
 app.use(express.json()); // Parses JSON requests
-app.use(cors());
+app.use(cors({ credentials: true }));
 app.use(
   morgan(morganFormat, {
     stream: {
