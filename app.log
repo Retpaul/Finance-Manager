@@ -28,3 +28,18 @@
   level: 'error',
   timestamp: '2024-12-17T14:58:09.998Z'
 }
+{
+  message: 'Something went wrong while connecting to MongoDb',
+  level: 'error',
+  timestamp: '2024-12-19T05:51:54.576Z'
+}
+{
+  message: 'Something went wrong while connecting to MongoDb',
+  level: 'error',
+  timestamp: '2024-12-19T05:56:27.121Z'
+}
+{
+  message: 'Something went wrong while connecting to MongoDb',
+  level: 'error',
+  timestamp: '2024-12-19T06:05:41.417Z'
+}
