@@ -71,9 +71,8 @@ export const registerUser = async (
 //endpoint - /api/auth/login
 
 export const userLogin = async (req: Request, res: Response): Promise<void> => {
-  
   const { error, value } = LoginValidation(req.body);
- 
+
   if (error) {
     res.status(400).json({ error: error.message, errors: error.details });
     return;
@@ -86,26 +85,26 @@ export const userLogin = async (req: Request, res: Response): Promise<void> => {
     res.status(401).json({ error: "Invalid credentials" });
     return;
   }
-  
+
   const correctPassword = await comparePassword(
     password,
     user.password as string
   );
-  
+
   if (!correctPassword) {
     res.status(401).json({ error: "Invalid credentials" });
     return;
   }
- 
-   await signToken(user._id.toString(), email, res); 
- 
-  res.status(200).json({ message: "Successfully Logged in" });
+
+  const token = await signToken(user._id.toString(), email, res);
+
+  res.status(200).json({token});
 };
 
-export const logoutUser = (req: Request, res: Response) => {
-  res.cookie("jwt", "", {
-    httpOnly: true,
-    expires: new Date(0),
-  });
-  res.status(200).json({ message: "Logged out successfully" });
-};
+// export const logoutUser = (req: Request, res: Response) => {
+//   res.cookie("jwt", "", {
+//     httpOnly: true,
+//     expires: new Date(0),
+//   });
+//   res.status(200).json({ message: "Logged out successfully" });
+// };

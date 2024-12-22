@@ -31,7 +31,7 @@ import config from "../../config";
       afterAll(async () => {
       await mongoose.connection.close();
     });
-    it("Should return 200 and message if login is succesful", async () => {
+    it("Should return 200 and token if login is succesful", async () => {
       const password="password123"
       const hashedPassword = await hashPassword(password)
     
@@ -50,7 +50,7 @@ import config from "../../config";
         });
   
       expect(resp.status).toBe(200);
-      expect(resp.body).toHaveProperty("message")
+      expect(resp.body).toHaveProperty("token")
   
     });
   

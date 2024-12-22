@@ -6,6 +6,9 @@ import cors from "cors";
 import logger from "./utils/logger";
 import { error, notFound } from "./middlewares/error";
 import authRoutes from "./routes/auth";
+import budgetRoutes from "./routes/budget";
+import transactionRoutes from "./routes/transaction";
+
 
 const app: Application = express();
 const morganFormat = ":method :url :status :response-time ms";
@@ -27,8 +30,11 @@ app.use(
   })
 );
 
+
 // Placeholder route
 app.use("/api/auth", authRoutes);
+app.use("/api/budgets", budgetRoutes);
+app.use("/api/transactions", transactionRoutes);
 app.use(notFound);
 app.use(error);
 

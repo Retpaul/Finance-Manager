@@ -143,8 +143,10 @@ Postman Documentation
 The API documentation, grouped by functionality, is available as a Postman collection:
 
 Endpoints:
-User Authentication: /api/auth/register, /api/auth/login
+User Authentication: /api/auth/register, /api/auth/login, api/auth/logout
+
 
 Authorization: Demonstrates JWT-based authorization for protected routes.
 Environment Setup: A Postman environment setup with common variables (base_url, auth_token) for easy testing.
 To view the Postman documentation, go here 
+User Management Documentation - https://documenter.getpostman.com/view/29921932/2sAYJ1n3EK

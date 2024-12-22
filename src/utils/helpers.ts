@@ -34,11 +34,6 @@ export async function signToken(userId: string, email: string, res: Response) {
     expiresIn: "3d",
   });
 
-  res.cookie("jwt", token, {
-    httpOnly: true,
-    secure: config.environment !== "development", // Use secure cookies in production
-    sameSite: "strict", // Prevent CSRF attacks
-    maxAge: 5 * 24 * 60 * 60 * 1000, // 5 days
-  });
+  
   return token;
 }

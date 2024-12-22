@@ -5,7 +5,7 @@ import app from "./app";
 import config from "./config";
 import logger from "./utils/logger";
 
-console.log(config.environment)
+// console.log(config.environment)
 
 const PORT = config.port || 5000
 connectToDb()
