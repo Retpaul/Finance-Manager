@@ -98,7 +98,9 @@ export const userLogin = async (req: Request, res: Response): Promise<void> => {
 
   const token = await signToken(user._id.toString(), email, res);
 
-  res.status(200).json({token});
+  res
+    .status(200)
+    .json({ token, message: "User Logged in Succesfully", data: user });
 };
 
 // export const logoutUser = (req: Request, res: Response) => {

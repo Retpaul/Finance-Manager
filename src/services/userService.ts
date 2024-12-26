@@ -7,5 +7,7 @@ export async function getUserById(id:string) {
 }
 export async function findUserByEmail(email:string) {
  
-  return await User.findOne({email});
+  return await User.findOne({email}).select(
+    "-password"
+  );
 }
