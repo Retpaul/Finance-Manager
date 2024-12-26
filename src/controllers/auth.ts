@@ -100,7 +100,11 @@ export const userLogin = async (req: Request, res: Response): Promise<void> => {
 
   res
     .status(200)
-    .json({ token, message: "User Logged in Succesfully", data: user });
+    .json({
+      token,
+      message: "User Logged in Succesfully",
+      data: { email: user.email, name: user.name },
+    });
 };
 
 // export const logoutUser = (req: Request, res: Response) => {

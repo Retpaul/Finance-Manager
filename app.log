@@ -43,3 +43,8 @@
   level: 'error',
   timestamp: '2024-12-19T06:05:41.417Z'
 }
+{
+  message: 'Something went wrong while connecting to MongoDb',
+  level: 'error',
+  timestamp: '2024-12-26T15:14:35.095Z'
+}
