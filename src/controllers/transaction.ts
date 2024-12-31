@@ -10,6 +10,7 @@ export const createTransaction = async (
   req: Request,
   res: Response
 ): Promise<void> => {
+  const userId = req.user._id;
   const { error, value } = transactionValidation(req.body);
   if (error) {
     res.status(400).json({ error: error.message, errors: error.details });
@@ -19,7 +20,8 @@ export const createTransaction = async (
   const newTransaction = new Transaction({
     amount,
     narration,
-    category
+    category,
+    ownerId: userId,
   });
 
   const savedTransaction = await newTransaction.save();
@@ -30,7 +32,10 @@ export const createTransaction = async (
 
   res
     .status(201)
-    .json({ message: "Transaction created successfully", data: savedTransaction });
+    .json({
+      message: "Transaction created successfully",
+      data: savedTransaction,
+    });
 };
 
 // @method GET
@@ -41,16 +46,22 @@ export const getTransactions = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const transactions = await Transaction.find({});
+  const userId = req.user._id;
+  //  console.log(user)
 
-  res.status(200).json( transactions );
+  const transactions = await Transaction.find({ ownerId: userId });
+
+  res.status(200).json(transactions);
 };
 
 // @method GET
 // @endpoint /api/transactions/:transactionId
 // @type private
 
-export const getTransaction = async (req: Request, res: Response): Promise<void> => {
+export const getTransaction = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   const transactionId = req.params.transactionId;
   const transaction = await Transaction.findById(transactionId);
   if (!transaction) {
@@ -58,7 +69,7 @@ export const getTransaction = async (req: Request, res: Response): Promise<void>
     return;
   }
 
-  res.status(200).json(transaction );
+  res.status(200).json(transaction);
 };
 
 // @method PUT
@@ -92,7 +103,10 @@ export const deleteTransaction = async (
   res: Response
 ): Promise<void> => {
   const transactionId = req.params.transactionId;
-  const deletedtransaction = await Transaction.findByIdAndDelete(transactionId, { new: true });
+  const deletedtransaction = await Transaction.findByIdAndDelete(
+    transactionId,
+    { new: true }
+  );
   if (!deletedtransaction) {
     res.status(404).json({ error: "Transaction Not found" });
     return;

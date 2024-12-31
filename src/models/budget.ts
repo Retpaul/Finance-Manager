@@ -1,5 +1,12 @@
 import mongoose from "mongoose";
 
+interface BudgetDocument extends Document {
+  title: string;
+  total_amount: number;
+  duration: string; // weekly, monthly, etc.
+  ownerId: string;
+ 
+}
 const { Schema, model } = mongoose;
 const { ObjectId } = Schema.Types;
 const budgetSchema = new Schema(

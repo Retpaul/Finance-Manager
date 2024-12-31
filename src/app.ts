@@ -8,6 +8,7 @@ import { error, notFound } from "./middlewares/error";
 import authRoutes from "./routes/auth";
 import budgetRoutes from "./routes/budget";
 import transactionRoutes from "./routes/transaction";
+import insightRoutes from "./routes/insights";
 
 
 const app: Application = express();
@@ -35,6 +36,7 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/budgets", budgetRoutes);
 app.use("/api/transactions", transactionRoutes);
+app.use("/api/insights", insightRoutes);
 app.use(notFound);
 app.use(error);
 

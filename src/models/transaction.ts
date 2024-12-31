@@ -1,5 +1,14 @@
 import mongoose from "mongoose";
 
+interface TransactionDocument extends Document {
+  amount: number;
+  category: string;
+  narration: string;
+  budgetId?: string;
+  ownerId: string;
+ 
+}
+
 const { Schema, model } = mongoose;
 const { ObjectId } = Schema.Types;
 const transactionSchema = new Schema(
